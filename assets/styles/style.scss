@@ -1,0 +1,44 @@
+// Set the encoding of the style sheet to Unicode UTF-8
+@charset "UTF-8";
+
+body, figure {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+// Utility
+@import "utility/rem";
+@import "utility/sizes";
+@import "utility/color-scheme";
+@import "utility/transition";
+@import "utility/shadow";
+@import "utility/hide";
+@import "utility/show";
+
+// Functional styles
+@import "utility/background";
+@import "utility/typography";
+@import "utility/selection";
+@import "utility/flex";
+@import "utility/border";
+@import "utility/width";
+@import "utility/height";
+@import "utility/margin";
+@import "utility/padding";
+@import "utility/position";
+
+// Components
+@import "components/blockquote";
+@import "components/list";
+@import "components/code";
+@import "components/markdown";
+@import "components/icon";
+@import "components/cta";
+@import "components/image";
+@import "components/menu";
+@import "components/hover-card";
+@import "components/top-nav";

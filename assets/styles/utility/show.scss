@@ -1,0 +1,7 @@
+.show {
+    &--md {
+        @include screen(md) {
+            display: block;
+        }
+    }
+}

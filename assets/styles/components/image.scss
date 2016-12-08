@@ -1,0 +1,14 @@
+$image-sizes: (
+    sm: 300px
+);
+
+.img {
+    &--square {
+        @each $size, $val in $image-sizes {
+            &-#{$size} {
+                height: auto;
+                width: $val;
+            }
+        }
+    }
+}

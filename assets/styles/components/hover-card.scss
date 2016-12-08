@@ -1,0 +1,12 @@
+.hover-card {
+    @extend .flex__box--sm;
+    @extend .flex__box--gutter-lg;
+    @extend .text--no-underline;
+    transform: translateY(0px);
+    transition: all transition(fast, cubic);
+
+    &:hover {
+        transform: translateY(-25px);
+        box-shadow: shadow(lg, purple);
+    }
+}

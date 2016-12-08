@@ -1,0 +1,52 @@
+$box-shadow-namespace: "shadow" !default;
+
+$shadow-sizes: (
+  sm: 7px 7px 14px,
+  md: 0px 4px 25px,
+  lg: 12px 12px 48px
+);
+
+$shadow-colors: (
+    black: rgba(color(black), 0.25),
+    blue: rgba(color(blue), 0.25),
+    pink: rgba(color(pink), 0.25),
+    purple: rgba(color(purple), 0.25)
+);
+
+@mixin set-shadow($_size, $_shadow, $_color: map-get($shadow-colors, black)) {
+    &--#{$_size} {
+      box-shadow: $_shadow $_color;
+    }
+
+
+    &--hover-#{$_size} {
+      &:hover {
+          box-shadow: $_shadow $_color;
+      }
+    }
+
+    &--inverted-#{$_size} {
+      box-shadow: inset $_shadow $_color;
+    }
+}
+
+.#{$box-shadow-namespace} {
+  @each $size, $shadow in $shadow-sizes {
+    @include set-shadow($size, $shadow, map-get($shadow-colors, black));
+
+    @each $color, $color-val in $shadow-colors {
+        &-#{$color} {
+            @include set-shadow($size, $shadow, $color-val);
+        }
+    }
+  }
+
+  // important to override markdown img
+  &--reset {
+      box-shadow: none !important;
+  }
+}
+
+@function shadow($size, $color: black) {
+  @return map-get($shadow-sizes, $size) map-get($shadow-colors, $color);
+}

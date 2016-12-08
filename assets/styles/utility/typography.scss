@@ -1,0 +1,153 @@
+// Base text reset
+$body-font: "Open Sans", Ariel;
+
+body {
+    font-family: $body-font;
+    color: color(text-dark);
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+%hoverUnderline {
+    position: relative;
+
+    &:after{
+        content: "";
+        transition: width transition(fast, cubic);
+        position: absolute;
+        bottom: -0.25rem;
+        height: 0.15rem;
+        width: 0;
+        background: currentColor;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &:hover:after, &.active:after{
+        width: 100%;
+    }
+}
+
+// Link reset
+a {
+    text-decoration: none;
+    // color: color(text-accent);
+    color: currentColor;
+    @extend %hoverUnderline;
+
+    &:focus,
+    &:visited {
+        color: color(text--accent);
+    }
+}
+
+h1, h3 {
+    font-weight: normal;
+}
+
+$typography-namespace: "text" !default;
+
+$text-sizes: (
+    lg: 2em,
+    xl: 3em
+);
+
+@function text($s){
+    @return map-get($text-sizes, $s);
+};
+
+.#{$typography-namespace} {
+    @each $size, $size-val in $text-sizes  {
+        &--#{$size}{
+            font-size: $size-val
+        }
+    }
+
+    &--center {
+        text-align: center;
+    }
+
+    &--right {
+        text-align: right;
+
+        &-md {
+            @include screen(md) {
+                text-align: right;
+            }
+        }
+    }
+
+    &--code {
+        font-family: 'Roboto Mono', monospace;
+    }
+
+    &--lora {
+        font-family: 'Lora', serif;
+    }
+
+    &--highlight {
+        font-family: 'Dancing Script', cursive;
+        font-size: 2em;
+    }
+
+    &-hover--light {
+        &:hover {
+            color: color(text-light);
+        }
+    }
+
+    &--light {
+        color: color(text-light);
+    }
+
+    &--accent {
+        color: color(text-accent);
+    }
+
+    &--no-underline {
+        &:after{
+            content: none;
+        }
+    }
+
+    &--underline {
+        border-bottom: 3px solid currentColor;
+    }
+
+    &-hover--dark {
+        &:hover {
+            color: color(text-dark);
+        }
+    }
+
+    &--shadow {
+        text-shadow: shadow(sm);
+    }
+
+    @each $color, $color-val in $colors  {
+        &--#{$color} {
+            // Important added to override .markdown a style
+            color: $color-val !important;
+
+            &:visited,
+            &:active,
+            &:focus {
+                color: $color-val;
+            }
+        }
+    }
+
+    &--rainbow {
+        @keyframes rainbow {
+            0% {color: map-get($rainbow, blue);}
+            16.67% {color: map-get($rainbow, red);}
+            33.33% {color: map-get($rainbow, salmon);}
+            50% {color: map-get($rainbow, green);}
+            66.67% {color: map-get($rainbow, purple);}
+            83.33% {color: map-get($rainbow, seafoam);}
+            100% {color: map-get($rainbow, blue);}
+       }
+
+        animation: rainbow 3s infinite; /* IE 10+, Fx 29+ */
+    }
+}

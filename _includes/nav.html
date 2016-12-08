@@ -1,0 +1,13 @@
+<nav class="top-nav onTop" data-top-nav="container">
+	<div class="top-nav__body" data-top-nav="nav">
+		<a href="/" class="top-nav__left flex text--no-underline" data-top-nav="icon">{% include svg/fa-logo.svg %}</a>
+
+		<ul class="top-nav__right text--code" data-top-nav="text">
+			{% for p in site.data.nav.navitems %}
+					<li class="top-nav__item">
+						<a {% if p.url == page.url %}class="active"{% else %}class=""{% endif %} href="{{ p.url | prepend: site.baseurl }}">{{ p.label }}</a>
+					</li>
+				{% endfor %}
+		</ul>
+	</div>
+</nav>

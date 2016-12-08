@@ -1,0 +1,16 @@
+    <!-- Footer -->
+	<footer class="border-top--xs-gray">
+		<div class="flex flex--column flex--row-md flex--space-between flex--flag mw--95-95 m--auto">
+      <div class="p--sm">
+        <a href="{{ site.url }}/">Freelance Afternoon</a>
+      </div>
+
+      <div class="flex flex--space-between">
+        {% for social in site.data.social.navitems %}
+          <div class="p--sm">
+            <a target="_blank" href="{{social.link}}">{{social.label}}</a>
+          </div>
+        {% endfor %}
+      </div>
+		</div>
+  </footer>

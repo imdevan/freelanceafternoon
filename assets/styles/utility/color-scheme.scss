@@ -1,0 +1,48 @@
+$colors: (
+    black: #292420,
+    white: white,
+    blue: #50C0E1,
+    green: #2BB7A3,
+    red: #E95353,
+    salmon: #F77F79,
+    light-gray: #f5f5f5,
+    gray: #a5a5a5,
+    dark-gray: #444444,
+    seafoam: #2BB7A3,
+    purple: #A087D2,
+    pink: #FCDED1
+);
+
+$rainbow: (
+    blue: map-get($colors, blue),
+    green: map-get($colors, green),
+    red: map-get($colors, red),
+    salmon: map-get($colors, salmon),
+    seafoam: map-get($colors, seafoam),
+    purple: map-get($colors, purple),
+);
+// blue alt
+// #1EAAF1
+
+$color-scheme: (
+    text-dark: map-get($colors, dark-gray),
+    text-light: map-get($colors, white),
+    text-button: map-get($colors, white),
+    text-accent: map-get($colors, red),
+    default-link: map-get($colors, red),
+    background-neutral:map-get($colors, light-gray),
+    background-dark: map-get($colors, dark-gray),
+    background-light: map-get($colors, white),
+    background-button: map-get($colors, red),
+    background-button-hover: map-get($colors, black),
+);
+
+@function color($color) {
+  // Default to color-scheme color
+  @if map-has-key($color-scheme, $color) {
+    @return map-get($color-scheme, $color);
+  }
+
+  // Otherwise check primary colors
+  @return map-get($colors, $color);
+}

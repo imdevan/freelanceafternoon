@@ -1,0 +1,141 @@
+.menu {
+    &__bar {
+        @extend .flex;
+        @extend .flex--center;
+        @extend .flex--space-between;
+        @extend .pos--fixed;
+        @extend .pos--fixed-highest;
+        @extend .pos--top-center;
+        @extend .mw--95-95;
+        @extend .pt--md;
+
+        &.close {
+            .icon {
+                transform: translateY(-200%);
+            }
+        }
+    }
+    &__button {
+        @extend .shadow-black--sm;
+        cursor: pointer;
+        transition: all transition(fast, cubic);
+        transform: translate(0%,0%);
+        background: color(white);
+        &.top {
+            @extend .shadow--reset;
+        }
+
+        &:hover {
+            background: color(text-dark);
+
+            .menu__hamburger {
+                background: color(white);
+                @extend .shadow-purple--sm;
+            }
+        }
+        &.open {
+            .menu__hamburger {
+                &-1{
+                   transform:translate3d(0,0,0) rotate(45deg);
+                 }
+                 &-2{
+                   transform:translate3d(0,0,0) scale(0.1,1);
+                 }
+                 &-3{
+                   transform:translate3d(0,0,0) rotate(-45deg);
+                 }
+            }
+        }
+    }
+
+    &__hamburger {
+          $width: 38px;
+          $height: 5.33px;
+          $hamburger-spacing: 5.33px*3;
+
+          width:$width;
+          height:$height;
+          @extend .bg--dark;
+
+          display:block;
+          position:absolute;
+          top:50%;
+          left:50%;
+          margin-left:-$width/2;
+          margin-top:-$height/2;
+          transition: all transition(fast, cubic);
+
+          &-1{
+              transform:translate3d(0,-$hamburger-spacing,0);
+          }
+          &-2{
+              transform:translate3d(0,0,0);
+          }
+          &-3{
+              transform:translate3d(0,$hamburger-spacing,0);
+          }
+    }
+
+    &__container {
+        @extend .flex;
+        @extend .flex--column;
+        @extend .flex--space-around;
+        background: linear-gradient(to top right, color(purple), color(blue));
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: map-get($position-z-indexes, higher);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity transition(fast, cubic),
+            visibility transition(fast, cubic, fast);
+
+
+        &.open {
+            transition: opacity transition(fast, cubic),
+                visibility transition(fast, cubic);
+
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__body {
+        @extend .flex;
+        @extend .flex--column;
+        @extend .text--right;
+        @extend .flex--space-around;
+        @extend .shadow--lg;
+        @extend .bg--white;
+        @extend .mw--80-90;
+        @extend .h--80-400;
+        @extend .m--auto;
+        @extend .p--lg;
+        @extend .pos--relative;
+
+        @include screen(md) {
+            font-size: text(lg);
+        }
+    }
+
+    &__footer {
+        @extend .flex;
+        @extend .flex--center;
+        @extend .flex--space-around;
+        @extend .text--center;
+        @extend .text--white;
+        @extend .text--code;
+        @extend .mw--95-90;
+        @extend .m--auto;
+        @extend .mt--0;
+    }
+
+    &__close {
+        @extend .p--lg;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+}
