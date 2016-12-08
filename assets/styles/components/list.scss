@@ -1,0 +1,13 @@
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+$list-item-namespace: "li" !default;
+
+.#{$list-item-namespace} {
+    &--no-style {
+        list-style-type: none;
+    }
+}

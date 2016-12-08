@@ -1,0 +1,54 @@
+$blockquote-border: 3px solid color(text-accent);
+
+.blockquote {
+    margin: 0;
+    margin-top: map-get($margin-sizes, sm);
+    position: relative;
+    box-shadow: shadow(lg);
+    color: rgba(0,0,0,0.6);
+    font-size: 18px;
+    padding: 30px 60px;
+    clear: both;
+    width: 100%;
+
+    // defaults
+    border-radius: 0 5px 5px 0;
+    border-left: $blockquote-border;
+
+
+    @include screen(md) {
+        display: inline-block;
+        width: auto;
+    }
+
+    &--right {
+        text-align: right;
+        float: right;
+        clear: both;
+
+        // override defaults
+        border-left: none !important;
+        border-radius: 5px 0 0 5px !important;
+        border-right: $blockquote-border;
+    }
+
+    code {
+        font-family: $body-font;
+    }
+
+    &.center {
+        display: table;
+        margin: auto;
+    }
+
+    &::after {
+        position: absolute;
+        top: 15px;
+        left: 10px;
+        color: rgba(0,0,0,0.3);
+        content: '“';
+        font-size: 60px;
+        font-family: "Times New Roman", serif;
+    }
+
+}

@@ -1,0 +1,14 @@
+.cta {
+    @extend .text--no-underline;
+    @extend .p--lg;
+    @extend .pos--center;
+    display: inline-block;
+    color: color(white) !important;
+    background: linear-gradient(to top right, color(purple), color(blue));
+    transition: all transition(slow, cubic);
+
+    &:hover {
+        transform: translateY(-.5rem) translateX(-50%);
+        @extend .shadow-purple--lg;
+    }
+}

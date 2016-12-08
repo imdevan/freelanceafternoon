@@ -1,0 +1,28 @@
+
+<head>
+	<meta charset="utf-8"/>
+	<title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
+	<meta name="viewport" content="initial-scale=1" />
+	<meta name="p:domain_verify" content="73bb9724cf18cc4f5f5d8e8553eeb2ff"/>
+
+	<meta property="og:title" content="{% if page.og-title %}{{ page.og-title }}{% else %}{{ page.title }}{% endif %}"/>
+	<meta property="og:image" content="{% if page.og-image %}{{ page.og-image }}{% else %}{{ site.image }}{% endif %}"/>
+<meta property="og:image:width" content="400" />
+<meta property="og:image:height" content="300" />
+	<meta property="og:site_name" content="{{ site.name }}"/>
+	<meta property="og:description" content="{{ site.description | strip_html }}"/>
+	<meta property="og:url" content="{{ page.url }}"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Lora|Roboto+Mono|Dancing+Script" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/css/style.css">
+
+	<link rel="shortcut icon" href="/favicon.png"/>
+
+    <!-- {% for item in site.data.theme-colors %}
+        {% if page.color contains item.color %}
+            <meta name="theme-color" content="{{item.hex}}" />
+        {% endif %}
+    {% endfor %} -->
+    <meta name="theme-color" content="#444444" />
+
+</head>

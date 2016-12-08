@@ -1,0 +1,96 @@
+$flex-namespace: "flex" !default;
+$flex-gutter: 1em !default;
+$flex-gutter-lg: $flex-gutter*1.5 !default;
+$flex-screen-sizes: md;
+$flex-sizes: (
+  sm: 1,
+  md: 2,
+);
+
+@mixin gutter($size) {
+    margin-bottom: $size;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    @include screen(md) {
+      margin-right: $size;
+      margin-bottom: 0;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+}
+
+.#{$flex-namespace} {
+  display: flex;
+
+  &--column {
+    flex-direction: column;
+  }
+
+  &--center {
+    justify-content: center;
+    align-items: center;
+
+    &-y {
+      justify-content: center;
+    }
+  }
+
+  &--flag {
+      align-items: center;
+  }
+
+  &--no-wrap {
+     lex-wrap: nowrap;
+  }
+
+  &--space-around {
+    justify-content: space-around;
+  }
+
+  &--space-between {
+    justify-content: space-between;
+  }
+
+  &--row {
+    flex-direction: row;
+
+    &-md {
+        @include screen(md) {
+          flex-direction: row;
+        }
+    }
+
+    &-rev-md {
+      @include screen(md) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__box {
+    @each $size, $val in $flex-sizes {
+        @each $screen in $flex-screen-sizes {
+            &--#{$size} {
+                 flex: $val;
+            }
+            &--#{$size}-#{$screen} {
+                @include screen($screen) {
+                    flex: $val;
+                }
+            }
+        }
+    }
+
+    &--gutter {
+        @include gutter($flex-gutter);
+        &-lg {
+            @include gutter($flex-gutter-lg);
+        }
+    }
+  }
+}

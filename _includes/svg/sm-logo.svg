@@ -1,0 +1,50 @@
+<svg width="50px" height="50px" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:figma="http://www.figma.com/figma/ns">
+<title>This one?</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-45 -3872)" figma:type="canvas">
+<mask id="mask0_alpha" mask-type="alpha">
+<path d="M 45 3872L 445 3872L 445 4272L 45 4272L 45 3872Z" fill="#FFFFFF"/>
+</mask>
+<g id="This one?" style="mix-blend-mode:normal;" mask="url(#mask0_alpha)" figma:type="frame">
+<path d="M 45 3872L 445 3872L 445 4272L 45 4272L 45 3872Z" fill="#FFFFFF"/>
+<g id="Rectangle" style="mix-blend-mode:normal;" figma:type="rounded-rectangle">
+<use xlink:href="#path0_fill" transform="matrix(-0.707107 -0.707107 0.707107 -0.707107 45 4272)" fill="url(#paint0_linear)" style="mix-blend-mode:normal;"/>
+</g>
+<g id="Rectangle" style="mix-blend-mode:normal;" figma:type="rounded-rectangle">
+<use xlink:href="#path1_fill" transform="matrix(0.707107 0.707107 -0.707107 0.707107 445.343 3872)" fill="url(#paint1_linear)" style="mix-blend-mode:normal;"/>
+</g>
+<g id="Group" style="mix-blend-mode:normal;" figma:type="frame">
+<g id="D" style="mix-blend-mode:normal;" filter="url(#filter0_d)" figma:type="text">
+<use xlink:href="#path2_fill" transform="translate(45.5 3864)" fill="#FFFFFF" style="mix-blend-mode:normal;"/>
+</g>
+<g id="Rectangle 2" style="mix-blend-mode:normal;" figma:type="rounded-rectangle">
+<use xlink:href="#path3_fill" transform="translate(173 3973)" fill="#FFFFFF" style="mix-blend-mode:normal;"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" filterUnits="userSpaceOnUse" x="108" y="3912" width="288" height="337" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<desc>type="dropShadow" x="0" y="4" size="25" spread="0" color="0,0,0,0.25" blend="normal"</desc>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="0" dy="4"/>
+<feGaussianBlur stdDeviation="12.5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.73191e-14 565.685 -282.843 3.46382e-14 282.843 -3.46382e-14)">
+<stop offset="0" stop-color="#ED5EB2"/>
+<stop offset="1" stop-color="#F2994A"/>
+</linearGradient>
+<linearGradient id="paint1_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.73043e-14 565.928 -282.6 3.46531e-14 282.6 -3.46531e-14)">
+<stop offset="0" stop-color="#9B51E0"/>
+<stop offset="1" stop-color="#56CCF2"/>
+</linearGradient>
+<path id="path0_fill" d="M 0 0L 282.843 0L 282.843 565.685L 0 565.685L 0 0Z"/>
+<path id="path1_fill" d="M 0 0L 282.6 0L 282.6 565.928L 0 565.928L 0 0Z"/>
+<path id="path2_fill" d="M 324.805 209.668C 324.805 256.673 311.393 292.676 284.57 317.676C 257.878 342.676 219.271 355.176 168.75 355.176L 87.8906 355.176L 87.8906 69.6289L 177.539 69.6289C 224.154 69.6289 260.352 81.9336 286.133 106.543C 311.914 131.152 324.805 165.527 324.805 209.668ZM 261.914 211.23C 261.914 149.902 234.831 119.238 180.664 119.238L 148.438 119.238L 148.438 305.176L 174.414 305.176C 232.747 305.176 261.914 273.861 261.914 211.23Z"/>
+<path id="path3_fill" d="M 0 0L 145 0L 145 198L 0 198L 0 0Z"/>
+</defs>
+</svg>

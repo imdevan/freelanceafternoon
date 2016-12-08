@@ -1,0 +1,45 @@
+$width-namespace: "w" !default;
+$max-width-namespace: "mw" !default;
+$width-scale: 10px;
+
+.#{$max-width-namespace} {
+  &--95-95 {
+    width: 95%;
+    max-width: 95*$width-scale;
+  }
+
+  &--95-90 {
+    width: 95%;
+    max-width: 900px;
+  }
+
+  &--80-90 {
+    width: 80%;
+    max-width: 900px;
+  }
+
+  &--95-60 {
+    width: 95%;
+    max-width: 600px;
+  }
+
+  &--80-45 {
+    width: 80%;
+    max-width: 450px;
+  }
+
+  &--100-45 {
+    width: 100%;
+    max-width: 450px;
+  }
+
+}
+
+.w {
+      &--100 {
+          width: 100%;
+      }
+      &--200 {
+        width: 200px;
+      }
+}

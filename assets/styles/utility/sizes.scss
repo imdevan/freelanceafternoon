@@ -1,0 +1,18 @@
+$scren-sizes: (
+  xs: 0px,
+  sm: 200px,
+  md: 500px,
+  lg: 700px,
+  xl: 900px,
+  xxl: 1200px
+);
+
+@function size($size) {
+  @return map-get($scren-sizes, $size);
+}
+
+@mixin screen($size) {
+  @media screen and (min-width: size($size)) {
+    @content
+  }
+}

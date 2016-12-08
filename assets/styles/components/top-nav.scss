@@ -1,0 +1,45 @@
+
+[data-top-nav='container'] {
+  transition: all transition(base, cubic);
+  background: color(white);
+}
+.onTop[data-top-nav='container'] {
+  background: none;
+  border-bottom: none;
+}
+.hide[data-top-nav='container'] {
+  transform: translateY(-100%);
+}
+
+.top-nav {
+  @extend .flex;
+  @extend .flex--center;
+  @extend .pos--fixed;
+  @extend .pos--fixed-highest;
+  @extend .w--100;
+  @extend .border-bottom--xs-gray;
+  @extend .bg--white;
+
+  &__body {
+    @extend .flex;
+    @extend .flex--space-between;
+    @extend .flex--flag;
+    @extend .flex--column;
+    @extend .flex--row-md;
+    @extend .py--xs;
+    @extend .mw--95-95;
+  }
+
+  &__right {
+    @extend .flex;
+    @extend .flex--space-around;
+  }
+
+  &__left {
+    @extend .px--sm;
+  }
+
+  &__item {
+    @extend .p--sm;
+  }
+}

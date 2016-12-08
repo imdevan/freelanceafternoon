@@ -1,0 +1,35 @@
+$border-namespace: "border" !default;
+$borders: (
+  xs-gray: .5px solid color(gray)
+);
+$border-radius-sizes: (
+    round: 50%,
+    md: 5px,
+    lg: 10px,
+);
+
+.#{$border-namespace} {
+    &-bottom {
+      @each $border, $border-val in $borders {
+          &--#{$border} {
+              border-bottom: $border-val
+          }
+      }
+    }
+    &-top {
+      @each $border, $border-val in $borders {
+          &--#{$border} {
+              border-top: $border-val
+          }
+      }
+    }
+}
+
+
+.br {
+    @each $border-radius, $border-radius-val in $border-radius-sizes {
+        &--#{$border-radius} {
+            border-radius: $border-radius-val
+        }
+    }
+}

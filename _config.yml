@@ -1,0 +1,51 @@
+# Site Config
+
+name: "Freelance Afternoon"
+description: >
+    A weekly podcast about freelancing.
+baseurl: "http://imdevan.com"
+url: http://freelanceafternoon.com
+slug: freelanceafternoon
+gems:
+  - jekyll-sitemap
+  - jekyll-paginate
+  - kramdown
+  - rouge
+  - jekyll-time-to-read
+
+image: "http://i.imgur.com/vkFkFqk.jpg"
+
+# Markdown settings
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+highlighter: rouge
+
+# Pagination variable for how many posts to show in a list
+paginate: 30
+post_dirs: false
+
+# Style of permalinks
+permalink: /:title/
+
+
+# In/excludes
+include: [".htaccess"]
+exclude: ["node_modules", "gulpfile.js", "Gemfile", "Gemfile.lock", ".jekyll-metadata", "commit-hook.sh", "package.json", "local_config.yml"]
+
+# Plugins
+assets:
+  digest: true
+  cache: false
+  sources:
+    - "assets/css"
+    - "images"
+
+# Read and Output Collections
+collections:
+  projects:
+    output: true
+    permalink: /portfolio/:title/

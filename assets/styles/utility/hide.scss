@@ -1,0 +1,9 @@
+.hide {
+    display: none;
+
+    &--md {
+        @include screen(md) {
+            display: none;
+        }
+    }
+}

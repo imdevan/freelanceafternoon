@@ -1,0 +1,26 @@
+$icon-sizes: (
+    md: 36px,
+    lg: 54px,
+);
+
+.icon {
+    @extend .text--no-underline;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        @extend .shadow-purple--sm;
+    }
+
+    @each $size, $size-val in $icon-sizes {
+        &--#{$size} {
+            width: $size-val;
+            height: $size-val;
+        }
+    }
+
+    &--float {
+        z-index: map-get($position-z-indexes, highest);
+    }
+}
