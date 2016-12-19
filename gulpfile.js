@@ -37,7 +37,7 @@ gulp.task('styles', function() {
   .pipe(gulp.dest('./_site/assets/css'))
   .pipe(browserSync.stream());
 });
-
+  
 // Compile SCSS into CSS & auto-inject into browsers
 gulp.task('scripts', function() {
   return gulp.src('./assets/js/**.js')
